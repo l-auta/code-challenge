@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grading System</title>
+    <!--Add styling to the page-->
     <style>
       body{
         background-color: blanchedalmond;
         background: linear-gradient(to top left, #00ffff, #f0ffff );
         background-repeat: no-repeat;
-
       }
 
       p{
@@ -55,6 +55,7 @@
 <body >
   <div>
     <p>Welcome dear student. Key in the required inputs in the fields below to get you grades.</p>
+  <!--Give prompts for the user input-->
     <div class="urname">
       <label >Your Name</label>
       <input type="text" id="studentname">
@@ -63,13 +64,14 @@
       <button id="submitbtn">Submit</button>
     </div>
   </div>
+  <!--Output received afer clicking the submit button-->
   <div class="results">
     <h2 id="congratsmessage"></h2>
     <h2 id="grade"></h2>
   </div>
 
   <script>
-
+    //first function: display a congrats message with the student name
     function funct1(){
         const sname = document.querySelector('#studentname');
         const message = document.querySelector('#congratsmessage');
@@ -77,6 +79,7 @@
         message.innerHTML = 'Congratulations on completing the test '  +  sname.value;
     }
 
+    //second function: assign grades to the scores input
     function funct2(){
         const score = parseInt(document.getElementById('totalscore').value);
         const Grade = document.getElementById('grade');
@@ -104,6 +107,7 @@
          Grade.innerHTML = "Your grade for the test is " + grade
              };
 
+    //get the desired output after clicking the submit button
     document.getElementById('submitbtn').addEventListener('click', function(){
         funct1();
         funct2();
