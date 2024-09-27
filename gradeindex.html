@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading System</title>
+    <style>
+      body{
+        background-color: blanchedalmond;
+        background: linear-gradient(to top left, #00ffff, #f0ffff );
+        background-repeat: no-repeat;
+
+      }
+
+      p{
+        text-align: center;
+        font-size: 28px;
+      }
+
+      .urname{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        font-size: 30px;
+        background-color: azure;
+        border-radius: 13px;
+        height: 250px;
+      }
+
+      #studentname{
+        height: 40px;
+        width: 280px;
+        font-size: 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+      }
+
+      #totalscore{
+        height: 40px;
+        width: 280px;
+        font-size: 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+      }
+
+      #submitbtn{
+        width: 150px;
+        height: 30px;
+        font-size: 18px;
+        border-radius: 15px;
+        margin-top: 18px;
+      }
+    </style>
+</head>
+<body >
+  <div>
+    <p>Welcome dear student. Key in the required inputs in the fields below to get you grades.</p>
+    <div class="urname">
+      <label >Your Name</label>
+      <input type="text" id="studentname">
+      <label>Your Scores</label>
+      <input type="number" id="totalscore" min="1" max="100">
+      <button id="submitbtn">Submit</button>
+    </div>
+  </div>
+  <div class="results">
+    <h2 id="congratsmessage"></h2>
+    <h2 id="grade"></h2>
+  </div>
+
+  <script>
+
+    function funct1(){
+        const sname = document.querySelector('#studentname');
+        const message = document.querySelector('#congratsmessage');
+
+        message.innerHTML = 'Congratulations on completing the test '  +  sname.value;
+    }
+
+    function funct2(){
+        const score = parseInt(document.getElementById('totalscore').value);
+        const Grade = document.getElementById('grade');
+        let grade;
+         if (score >=80 && score <=100){
+            grade = 'A'
+         }
+
+         else if (score >=60 && score <=79){
+            grade ='B'
+         }
+
+         else if (score >=49 && score <=59){
+            grade ='C'
+         }
+
+         else if (score >=40 && score <=48){
+            grade = 'D'
+         }
+
+         else if (score >=1 && score <=40){
+            grade = 'E'
+         }
+
+         Grade.innerHTML = "Your grade for the test is " + grade
+             };
+
+    document.getElementById('submitbtn').addEventListener('click', function(){
+        funct1();
+        funct2();
+    });
+
+
+
+
+
+  </script>
+
+</body>
+</html>
