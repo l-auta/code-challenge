@@ -92,13 +92,35 @@
   </div>
   <div class="results">
     <p id="driverresult"></p>
-    <p id="overtewlve"></p>
+    <p id="overtwelve"></p>
   </div>
   <footer class="bsafe">
     ~!STAY SAFE!~
   </footer>
 
   <script>
+    document.getElementById('resultbtn').addEventListener('click', function(){
+        const speed = parseInt(document.getElementById('speed').value);
+        const points = calcpoints(speed);
+        document.getElementById('driverresult').innerText= `Your point(s) is : ${points}`;
+
+        const message = document.getElementById('overtwelve');
+        if (points >12){
+            message.innerHTML = 'Your license has been suspended!';
+        }
+        else if (points <1){
+            message.innerHTML = 'You are okay.';
+        }
+    });
+
+    function calcpoints(speed){
+        if (speed >70){
+            const extraspeed = speed-70;
+            const points = Math.floor(extraspeed/5);
+            return points;
+        }
+        return 0
+    }
 
   </script>
 </body>
