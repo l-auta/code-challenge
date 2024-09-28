@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Detector</title>
+    <style>
+      body{
+        background: linear-gradient(to top right, #778899, #708090, #696969);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 910px;
+      }
+
+      .infomessage{
+        height: 400px;
+        font-size: 32px;
+        color: #fff5ee;
+        text-indent: 10px;
+      }
+
+      .pagetitle{
+        text-align: center;
+        text-decoration: overline underline;
+      }
+
+      .warning{
+        line-height: 10px;
+      }
+
+      .driverinput{
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .speedinput{
+        height: 45px;
+        width: 250px;
+        font-size: 25px;
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .inputlabel{
+        font-size: 35px;
+        color: #fff5ee;
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+
+      }
+
+      .button{
+        height: 35px;
+        width: 200px;
+        font-size: 16px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        border: #696969 solid;
+      }
+
+      .results{
+        height: 180px;
+        font-size: 30px;
+        color: #fff5ee;
+      }
+
+      .bsafe{
+        text-align: center;
+        font-size: 45px;
+        text-decoration-line: underline;
+        text-decoration-style: double;
+        text-decoration-thickness: 3px;
+        color: #fff5ee;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="infomessage">
+    <h1 class="pagetitle">Speed Detector</h1>
+    <p>Our speed detector program aims at reducing the amount of accidents that happen everyday on our roads. Using our speed detector controls drivers to maintain a speed of 70km/h as for every 5km/h above that a demerit point is given. However for a speed below 70km/h the driver gets an approval message from the system.</p>
+    <h3 class="warning"><b>!WARNING!</b></h3>
+    <p class="warning"><i>Going above our limit of 12 points will result in your license being suspended!</i></p>
+  </div>
+  <div class="driverinput">
+    <label class="inputlabel">Speed of car</label>
+    <input class="speedinput" id="speed" type="number" placeholder="speed in km/h">
+    <button class="button" id="resultbtn">GET RESULT</button>
+  </div>
+  <div class="results">
+    <p id="driverresult"></p>
+    <p id="overtewlve"></p>
+  </div>
+  <footer class="bsafe">
+    ~!STAY SAFE!~
+  </footer>
+
+  <script>
+
+  </script>
+</body>
+
+</html>
