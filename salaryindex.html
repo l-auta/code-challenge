@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Net Salary Calculator</title>
+</head>
+<body>
+   <p>Hello there! To get your net salary, key in the required inputs in the fields provided below with the right information.</p>
+<!--where the user inputs data requires to get their net salary-->
+  <div>
+    <label>Gross Salary</label>
+    <input type="number" placeholder="G.Salary" id="grossalary">
+    <label>Payee</label>
+    <input type="number" placeholder="total tax" id="tax">
+    <label>NHIF Deduction</label>
+    <input type="number" placeholder="NHIF" id="nhif">
+    <label>NSSF Deduction</label>
+    <input type="number" placeholder="NSSF" id="nssf">
+    <button id="btn">Submit</button>
+  </div>
+  <!--the result of the net salary is displayed-->
+  <div>
+    <p id="netsalary"></p>
+  </div>
+
+  <script>
+//get the function to be executed when the button is clicked and the output required
+    document.getElementById('btn').addEventListener('click', function(){
+        const gsalary = parseInt(document.getElementById('grossalary').value);
+        const tax = parseInt(document.getElementById('tax').value);
+        const nhif = parseInt(document.getElementById('nhif').value);
+        const nssf = parseInt(document.getElementById('nssf').value);
+        const deductions = add(tax, nhif, nssf);
+        const netsalary = subtract(gsalary, deductions);
+
+//where output is displayed
+        document.getElementById('netsalary').innerHTML = `Your net salary is : ${netsalary}`;
+    });
+//the function to calculate net salary
+    function add(tax, nhif, nssf){
+        return tax + nhif+ nssf
+    }
+
+    function subtract (gsalary, deductions){
+        return gsalary- deductions
+    }
+  </script>
+</body>
+</html>

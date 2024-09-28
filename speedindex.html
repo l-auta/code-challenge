@@ -6,6 +6,7 @@
     <title>Speed Detector</title>
     <!--Styling for the program-->
     <style>
+        
       body{
         background: linear-gradient(to top right, #778899, #708090, #696969);
         background-repeat: no-repeat;
@@ -14,8 +15,8 @@
       }
 
       .infomessage{
-        height: 400px;
-        font-size: 32px;
+        height: 380px;
+        font-size: 30px;
         color: #fff5ee;
         text-indent: 10px;
       }
@@ -30,14 +31,14 @@
       }
 
       .driverinput{
-        height: 250px;
+        height: 270px;
         display: flex;
         flex-direction: column;
       }
 
       .speedinput{
         height: 45px;
-        width: 250px;
+        width: 200px;
         font-size: 25px;
         border-radius: 10px;
         margin-top: 10px;
@@ -123,7 +124,7 @@
     function calcpoints(speed){
         if (speed >70){
             const extraspeed = speed-70;//get by how much has it surpassed 70km/h
-            const points = Math.floor(extraspeed/5);//gets the extra points and divides it by 5 to get the point for every 5km/h 
+            const points = Math.floor(extraspeed/5);//gets the extra points and divides it by 5 to get the point for every 5km/h
             return points;
         }
         return 0
