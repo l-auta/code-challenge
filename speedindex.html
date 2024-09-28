@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Speed Detector</title>
+    <!--Styling for the program-->
     <style>
       body{
         background: linear-gradient(to top right, #778899, #708090, #696969);
@@ -79,17 +80,21 @@
 </head>
 
 <body>
+    <!--some info about the program-->
   <div class="infomessage">
     <h1 class="pagetitle">Speed Detector</h1>
     <p>Our speed detector program aims at reducing the amount of accidents that happen everyday on our roads. Using our speed detector controls drivers to maintain a speed of 70km/h as for every 5km/h above that a demerit point is given. However for a speed below 70km/h the driver gets an approval message from the system.</p>
+    <!--beforehand warning-->
     <h3 class="warning"><b>!WARNING!</b></h3>
     <p class="warning"><i>Going above our limit of 12 points will result in your license being suspended!</i></p>
   </div>
+  <!--where the user will input the speed-->
   <div class="driverinput">
     <label class="inputlabel">Speed of car</label>
     <input class="speedinput" id="speed" type="number" placeholder="speed in km/h">
     <button class="button" id="resultbtn">GET RESULT</button>
   </div>
+  <!--The output displayed after results-->
   <div class="results">
     <p id="driverresult"></p>
     <p id="overtwelve"></p>
@@ -99,24 +104,26 @@
   </footer>
 
   <script>
+    //function to allow the input speed to be processed
     document.getElementById('resultbtn').addEventListener('click', function(){
-        const speed = parseInt(document.getElementById('speed').value);
-        const points = calcpoints(speed);
-        document.getElementById('driverresult').innerText= `Your point(s) is : ${points}`;
+        const speed = parseInt(document.getElementById('speed').value);//get the input speed
+        const points = calcpoints(speed);//calculate points by the speed given
+        document.getElementById('driverresult').innerText= `Your point(s) is : ${points}`;//print the points
 
-        const message = document.getElementById('overtwelve');
+        const message = document.getElementById('overtwelve');//where the message if the driver is okay will be displayed
         if (points >12){
-            message.innerHTML = 'Your license has been suspended!';
+            message.innerHTML = 'Your license has been suspended!';//output if points are above 12
         }
         else if (points <1){
-            message.innerHTML = 'You are okay.';
+            message.innerHTML = 'You are okay.';//if the points are below 1
         }
     });
 
+    //function to calculate the points
     function calcpoints(speed){
         if (speed >70){
-            const extraspeed = speed-70;
-            const points = Math.floor(extraspeed/5);
+            const extraspeed = speed-70;//get by how much has it surpassed 70km/h
+            const points = Math.floor(extraspeed/5);//gets the extra points and divides it by 5 to get the point for every 5km/h 
             return points;
         }
         return 0
